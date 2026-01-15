@@ -252,6 +252,9 @@ btnSort.addEventListener('click', function (e) {
 /////////////////////////////////////////////////
 // LECTURES
 
+
+// 181 :: CONVERTING AND CHECKING NUMBERS
+
 console.log(23 === 23.0);
 
 // BASE 10 - 0 to 9 1/10 = 0.1
@@ -286,4 +289,56 @@ console.log(Number.isFinite(23/0));
 console.log(Number.isInteger(23));
 console.log(Number.isInteger(23.0));
 console.log(Number.isInteger(23 / 0));
+
+// 182 :: MATH AND ROUNDING
+
+console.log(Math.sqrt(25));
+console.log(25 ** (1 / 2));
+console.log(8 ** (1 / 3));
+
+console.log(Math.max(5, 18, 23, 11, 2));
+console.log(Math.max(5, 18, '23', 11, 2));
+console.log(Math.max(5, 18, '23px', 11, 2));
+
+console.log(Math.min(5, 18, 23, 11, 2));
+
+console.log(Math.PI * Number.parseFloat('10px') ** 2);
+
+console.log(Math.trunc(Math.random() * 6) + 1);
+
+const randomInt = (min, max) => Math.floor(Math.random() * (max-min + 1)) + min;
+// 0...1 -> 0...(max - min) -> min ... max
+
+console.log('random int');
+console.log(randomInt(9, 20));
+console.log(randomInt(0, 3));
+
+// Rounding integers
+console.log('trunc') // removes decimal pt ->
+console.log(Math.trunc(23.3));
+console.log(Math.trunc(23.9));
+
+console.log('round')
+console.log(Math.round(23.3));
+console.log(Math.round(23.9));
+
+console.log('ceil')
+console.log(Math.ceil(23.3));
+console.log(Math.ceil(23.9));
+
+console.log('floor')
+console.log(Math.floor(23.3));
+console.log(Math.floor('23.9'));
+
+console.log('trunc-floor')
+console.log(Math.trunc(23.3));
+console.log(Math.trunc(-23.3));
+console.log(Math.floor(-23.3));
+
+// Rounding decimals
+console.log((2.7.toFixed(0))); // always return a STRING
+console.log((2.7.toFixed(3))); // always return a STRING
+console.log((2.345.toFixed(3))); // always return a STRING
+
+
 
