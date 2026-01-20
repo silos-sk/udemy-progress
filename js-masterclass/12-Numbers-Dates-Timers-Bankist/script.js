@@ -377,4 +377,39 @@ btnSort.addEventListener('click', function (e) {
 // console.log(Number('230_000')); // NaN
 // console.log(parseInt('230_000')); // displays 230 (the rest is ignored)
 
+// 185 WORKING WITH BIGINT
 
+console.log(2 ** 53 - 1);
+console.log(Number.MAX_SAFE_INTEGER);
+console.log(2 ** 53 + 1);
+console.log(2 ** 53 + 2);
+console.log(2 ** 53 + 3);
+console.log(2 ** 53 + 4);
+
+console.log(3456567457788679679768767455352352n); // 'n' at the end transforms it into big int
+
+console.log(BigInt(3456567457));
+
+// Operations
+console.log(10000n + 10000n);
+console.log(2345346456765848747456364373886n * 2389794352789453320745394n);
+// console.log(Math.sqrt(16n)); // do not work
+
+const huge = 23449503748979750n;
+const num = 23;
+// console.log(huge * num) // Cannot mix big int and other types
+console.log(huge * BigInt(num)); // work
+
+// EXCEPTIONS
+console.log(20n > 15); // true
+console.log(20n === 20); // false
+console.log(typeof 20n); // bigint
+console.log(20n == 20); // true - type coercion
+
+// STRING CONCATENATION
+console.log(huge + ' is REALLY big!!!') // converted to string
+
+// DIVISIONS
+console.log(10n / 3n); // 3n
+console.log(10 / 3); // 3.3333
+console.log(11n / 3n); //3n
