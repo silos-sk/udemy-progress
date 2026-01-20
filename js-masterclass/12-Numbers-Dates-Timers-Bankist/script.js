@@ -379,37 +379,76 @@ btnSort.addEventListener('click', function (e) {
 
 // 185 WORKING WITH BIGINT
 
-console.log(2 ** 53 - 1);
-console.log(Number.MAX_SAFE_INTEGER);
-console.log(2 ** 53 + 1);
-console.log(2 ** 53 + 2);
-console.log(2 ** 53 + 3);
-console.log(2 ** 53 + 4);
+// console.log(2 ** 53 - 1);
+// console.log(Number.MAX_SAFE_INTEGER);
+// console.log(2 ** 53 + 1);
+// console.log(2 ** 53 + 2);
+// console.log(2 ** 53 + 3);
+// console.log(2 ** 53 + 4);
 
-console.log(3456567457788679679768767455352352n); // 'n' at the end transforms it into big int
+// console.log(3456567457788679679768767455352352n); // 'n' at the end transforms it into big int
 
-console.log(BigInt(3456567457));
+// console.log(BigInt(3456567457));
 
-// Operations
-console.log(10000n + 10000n);
-console.log(2345346456765848747456364373886n * 2389794352789453320745394n);
-// console.log(Math.sqrt(16n)); // do not work
+// // Operations
+// console.log(10000n + 10000n);
+// console.log(2345346456765848747456364373886n * 2389794352789453320745394n);
+// // console.log(Math.sqrt(16n)); // do not work
 
-const huge = 23449503748979750n;
-const num = 23;
-// console.log(huge * num) // Cannot mix big int and other types
-console.log(huge * BigInt(num)); // work
+// const huge = 23449503748979750n;
+// const num = 23;
+// // console.log(huge * num) // Cannot mix big int and other types
+// console.log(huge * BigInt(num)); // work
 
-// EXCEPTIONS
-console.log(20n > 15); // true
-console.log(20n === 20); // false
-console.log(typeof 20n); // bigint
-console.log(20n == 20); // true - type coercion
+// // EXCEPTIONS
+// console.log(20n > 15); // true
+// console.log(20n === 20); // false
+// console.log(typeof 20n); // bigint
+// console.log(20n == 20); // true - type coercion
 
-// STRING CONCATENATION
-console.log(huge + ' is REALLY big!!!') // converted to string
+// // STRING CONCATENATION
+// console.log(huge + ' is REALLY big!!!') // converted to string
 
-// DIVISIONS
-console.log(10n / 3n); // 3n
-console.log(10 / 3); // 3.3333
-console.log(11n / 3n); //3n
+// // DIVISIONS
+// console.log(10n / 3n); // 3n
+// console.log(10 / 3); // 3.3333
+// console.log(11n / 3n); //3n
+
+// 186 :: CREATING DATES
+
+// Create a date
+// const now = new Date();
+// console.log(now);
+
+// console.log(new Date('Aug 02, 2020 18:05:41'));
+// console.log(new Date('december 24, 2015'));
+
+// console.log(new Date(account1.movementsDates[0]));
+
+// console.log(account1);
+
+// console.log(new Date (2037, 10, 19, 15, 23, 5));
+// console.log(new Date (2037, 10, 33));
+
+// console.log(new Date(0))
+// console.log(new Date(3 * 24 * 60 * 60 * 1000))
+
+// Working with dates
+// const future = new Date(2037, 10, 19, 15, 23);
+// console.log(future);
+// console.log(future.getFullYear());
+// console.log(future.getMonth());
+// console.log(future.getDate());
+// console.log(future.getDay());
+// console.log(future.getHours());
+// console.log(future.getMinutes());
+// console.log(future.getSeconds());
+// console.log(future.toISOString());
+// console.log(future.getTime());
+
+// console.log(new Date(2142256980000));
+
+// console.log(Date.now());
+
+// future.setFullYear(2040);
+// console.log(future);
