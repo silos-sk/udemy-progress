@@ -255,91 +255,107 @@ btnSort.addEventListener('click', function (e) {
 
 // 181 :: CONVERTING AND CHECKING NUMBERS
 
-console.log(23 === 23.0);
+// console.log(23 === 23.0);
 
 // BASE 10 - 0 to 9 1/10 = 0.1
 // Binary base 2 - 0 1
 
-console.log(0.1 + 0.2);
+// console.log(0.1 + 0.2);
 
-// Conversion
-console.log(Number('23'));
-console.log(+'23'); // shorthand of Number()
+// // Conversion
+// console.log(Number('23'));
+// console.log(+'23'); // shorthand of Number()
 
-// Parsing
-console.log(Number.parseInt('30px', 10));
-console.log(Number.parseInt('e23', 10));
-console.log(Number.parseInt('2.5rem'));
-console.log(Number.parseFloat('   2.5rem    '));
+// // Parsing
+// console.log(Number.parseInt('30px', 10));
+// console.log(Number.parseInt('e23', 10));
+// console.log(Number.parseInt('2.5rem'));
+// console.log(Number.parseFloat('   2.5rem    '));
 
-// console.log(parseFloat('   2.5rem'));
+// // console.log(parseFloat('   2.5rem'));
 
-// Check if value is NaN
-console.log(Number.isNaN(20));
-console.log(Number.isNaN('20'));
-console.log(Number.isNaN(+'20X'));
-console.log(Number.isNaN(23/0));
+// // Check if value is NaN
+// console.log(Number.isNaN(20));
+// console.log(Number.isNaN('20'));
+// console.log(Number.isNaN(+'20X'));
+// console.log(Number.isNaN(23/0));
 
-// Best way - checking if value is a real number
-console.log(Number.isFinite(20));
-console.log(Number.isFinite('20'));
-console.log(Number.isFinite(+'20X'));
-console.log(Number.isFinite(23/0));
+// // Best way - checking if value is a real number
+// console.log(Number.isFinite(20));
+// console.log(Number.isFinite('20'));
+// console.log(Number.isFinite(+'20X'));
+// console.log(Number.isFinite(23/0));
 
-console.log(Number.isInteger(23));
-console.log(Number.isInteger(23.0));
-console.log(Number.isInteger(23 / 0));
+// console.log(Number.isInteger(23));
+// console.log(Number.isInteger(23.0));
+// console.log(Number.isInteger(23 / 0));
 
-// 182 :: MATH AND ROUNDING
+// // 182 :: MATH AND ROUNDING
 
-console.log(Math.sqrt(25));
-console.log(25 ** (1 / 2));
-console.log(8 ** (1 / 3));
+// console.log(Math.sqrt(25));
+// console.log(25 ** (1 / 2));
+// console.log(8 ** (1 / 3));
 
-console.log(Math.max(5, 18, 23, 11, 2));
-console.log(Math.max(5, 18, '23', 11, 2));
-console.log(Math.max(5, 18, '23px', 11, 2));
+// console.log(Math.max(5, 18, 23, 11, 2));
+// console.log(Math.max(5, 18, '23', 11, 2));
+// console.log(Math.max(5, 18, '23px', 11, 2));
 
-console.log(Math.min(5, 18, 23, 11, 2));
+// console.log(Math.min(5, 18, 23, 11, 2));
 
-console.log(Math.PI * Number.parseFloat('10px') ** 2);
+// console.log(Math.PI * Number.parseFloat('10px') ** 2);
 
-console.log(Math.trunc(Math.random() * 6) + 1);
+// console.log(Math.trunc(Math.random() * 6) + 1);
 
-const randomInt = (min, max) => Math.floor(Math.random() * (max-min + 1)) + min;
-// 0...1 -> 0...(max - min) -> min ... max
+// const randomInt = (min, max) => Math.floor(Math.random() * (max-min + 1)) + min;
+// // 0...1 -> 0...(max - min) -> min ... max
 
-console.log('random int');
-console.log(randomInt(9, 20));
-console.log(randomInt(0, 3));
+// console.log('random int');
+// console.log(randomInt(9, 20));
+// console.log(randomInt(0, 3));
 
-// Rounding integers
-console.log('trunc') // removes decimal pt ->
-console.log(Math.trunc(23.3));
-console.log(Math.trunc(23.9));
+// // Rounding integers
+// console.log('trunc') // removes decimal pt ->
+// console.log(Math.trunc(23.3));
+// console.log(Math.trunc(23.9));
 
-console.log('round')
-console.log(Math.round(23.3));
-console.log(Math.round(23.9));
+// console.log('round')
+// console.log(Math.round(23.3));
+// console.log(Math.round(23.9));
 
-console.log('ceil')
-console.log(Math.ceil(23.3));
-console.log(Math.ceil(23.9));
+// console.log('ceil')
+// console.log(Math.ceil(23.3));
+// console.log(Math.ceil(23.9));
 
-console.log('floor')
-console.log(Math.floor(23.3));
-console.log(Math.floor('23.9'));
+// console.log('floor')
+// console.log(Math.floor(23.3));
+// console.log(Math.floor('23.9'));
 
-console.log('trunc-floor')
-console.log(Math.trunc(23.3));
-console.log(Math.trunc(-23.3));
-console.log(Math.floor(-23.3));
+// console.log('trunc-floor')
+// console.log(Math.trunc(23.3));
+// console.log(Math.trunc(-23.3));
+// console.log(Math.floor(-23.3));
 
-// Rounding decimals
-console.log((2.7.toFixed(0))); // always return a STRING
-console.log((2.7.toFixed(3))); // decimal pts
-console.log((2.7.toFixed(2))); 
-console.log(+(2.345.toFixed(3))); 
+// // Rounding decimals
+// console.log((2.7.toFixed(0))); // always return a STRING
+// console.log((2.7.toFixed(3))); // decimal pts
+// console.log((2.7.toFixed(2))); 
+// console.log(+(2.345.toFixed(3))); 
 
+// %
 
+// console.log(5 % 2);
+// console.log(5 / 2); // 5 = 2 * 2 + 1
+
+// const isEven = n => n % 2 === 0;
+// console.log(isEven(8));
+
+// labelBalance.addEventListener('click', function(){
+//   [...document.querySelectorAll('.movements__row')]
+//   .forEach(function (row, i){
+//     // 0, 2, 4, 6
+//   if (i % 2 === 0) row.style.backgroundcolor = 'orangered';
+//    // 0, 3, 6, 9
+//   if (i % 3 === 0) row.style.backgroundcolor = 'blue'
+// });
+// });
 
