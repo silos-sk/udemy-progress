@@ -341,7 +341,7 @@ btnSort.addEventListener('click', function (e) {
 // console.log((2.7.toFixed(2))); 
 // console.log(+(2.345.toFixed(3))); 
 
-// %
+// % 183 :: THE REMAINDER OPERATOR
 
 // console.log(5 % 2);
 // console.log(5 / 2); // 5 = 2 * 2 + 1
@@ -358,4 +358,23 @@ btnSort.addEventListener('click', function (e) {
 //   if (i % 3 === 0) row.style.backgroundcolor = 'blue'
 // });
 // });
+
+// 184 :: NUMERIC SEPARATORS
+
+// const diameter = 287_460_000_000;
+// console.log(diameter);
+
+// const priceCents = 354_99;
+// console.log(priceCents);
+
+// const transferFee = 15_00;
+// const transferFee2 = 1_500;
+
+// // can place underscore between numbers, not in beginning/end, next to each other, or in a string
+// const PI = 3.1415
+// console.log(PI);
+
+// console.log(Number('230_000')); // NaN
+// console.log(parseInt('230_000')); // displays 230 (the rest is ignored)
+
 
