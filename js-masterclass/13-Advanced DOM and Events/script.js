@@ -40,14 +40,14 @@ document.addEventListener('keydown', function (e) {
 const header = document.querySelector('.header');
 
 const allSections = document.querySelectorAll('section');
-console.log(allSections);
+// console.log(allSections);
 
 document.getElementById('section--1'); 
 const allButtons = document.getElementsByTagName('button'); // HTML collection; live nums
 
-console.log(allButtons);
+// console.log(allButtons);
 
-console.log(document.getElementsByClassName('btn'));
+// console.log(document.getElementsByClassName('btn'));
 
 // Creating and inserting elements
 
@@ -64,11 +64,51 @@ header.append(message);
 // header.after(message);
 
 
-// Delete elements
+// // Delete elements
 document.querySelector('.btn--close-cookie').addEventListener('click', function(){
   message.remove();
 })
 
+// 199 :: Styles, Attributes, Classes
 
+// Styles
+message.style.backgroundColor = '#37383d';
 
+message.style.width = '120%';
 
+console.log(getComputedStyle(message).color);
+
+message.style.height = Number.parseFloat(getComputedStyle(message).height) + 40 + 'px';
+
+//change style from css variables
+document.documentElement.style.setProperty('--color-primary', 'orangered');
+
+// Attributes
+const logo = document.querySelector('.nav__logo');
+console.log(logo.className);
+
+logo.alt = 'Beautiful minimalist logo';
+
+// Non-standard
+console.log(logo.designer); // undefined
+console.log(logo.getAttribute('designer'));
+logo.setAttribute('company', 'Bankist');
+
+console.log(logo.src); // absolute url
+console.log(logo.getAttribute('src')); // relative url
+
+const link = document.querySelector('.nav__link--btn');
+console.log(link.href);
+console.log(link.getAttribute('href'));
+
+// Data attributes
+console.log(logo.dataset.versionNumber);
+
+// Classes
+logo.classList.add('c', 'j')
+logo.classList.remove('c')
+logo.classList.toggle('c')
+logo.classList.contains('c'); // not includes like in arrays
+
+// Don't use = overwrites ALL existing classes
+logo.className = 'jonas'
