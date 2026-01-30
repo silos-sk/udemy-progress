@@ -37,78 +37,109 @@ document.addEventListener('keydown', function (e) {
 /// LECTURES
 
 // 198 :: Selecting, Creating, and Deleting Elements
-const header = document.querySelector('.header');
+// const header = document.querySelector('.header');
 
-const allSections = document.querySelectorAll('section');
-// console.log(allSections);
+// const allSections = document.querySelectorAll('section');
+// // console.log(allSections);
 
-document.getElementById('section--1'); 
-const allButtons = document.getElementsByTagName('button'); // HTML collection; live nums
+// document.getElementById('section--1'); 
+// const allButtons = document.getElementsByTagName('button'); // HTML collection; live nums
 
-// console.log(allButtons);
+// // console.log(allButtons);
 
-// console.log(document.getElementsByClassName('btn'));
+// // console.log(document.getElementsByClassName('btn'));
 
-// Creating and inserting elements
+// // Creating and inserting elements
 
-const message = document.createElement('div');
-message.classList.add('cookie-message');
-// message.textContent = 'We use cookies for improved functionality and analytics.';
-message.innerHTML = 'We use cookies for improved functionality and analytics. <button class="btn btn--close-cookie">Got it!</button>';
+// const message = document.createElement('div');
+// message.classList.add('cookie-message');
+// // message.textContent = 'We use cookies for improved functionality and analytics.';
+// message.innerHTML = 'We use cookies for improved functionality and analytics. <button class="btn btn--close-cookie">Got it!</button>';
 
-// header.prepend(message);
-header.append(message);
-// header.append(message.cloneNode(true));
+// // header.prepend(message);
+// header.append(message);
+// // header.append(message.cloneNode(true));
 
-// header.before(message);
-// header.after(message);
+// // header.before(message);
+// // header.after(message);
 
 
-// // Delete elements
-document.querySelector('.btn--close-cookie').addEventListener('click', function(){
-  message.remove();
-})
+// // // Delete elements
+// document.querySelector('.btn--close-cookie').addEventListener('click', function(){
+//   message.remove();
+// })
 
-// 199 :: Styles, Attributes, Classes
+// // 199 :: Styles, Attributes, Classes
 
-// Styles
-message.style.backgroundColor = '#37383d';
+// // Styles
+// message.style.backgroundColor = '#37383d';
 
-message.style.width = '120%';
+// message.style.width = '120%';
 
-console.log(getComputedStyle(message).color);
+// console.log(getComputedStyle(message).color);
 
-message.style.height = Number.parseFloat(getComputedStyle(message).height) + 40 + 'px';
+// message.style.height = Number.parseFloat(getComputedStyle(message).height) + 40 + 'px';
 
-//change style from css variables
-document.documentElement.style.setProperty('--color-primary', 'orangered');
+// //change style from css variables
+// document.documentElement.style.setProperty('--color-primary', 'orangered');
 
-// Attributes
-const logo = document.querySelector('.nav__logo');
-console.log(logo.className);
+// // Attributes
+// const logo = document.querySelector('.nav__logo');
+// console.log(logo.className);
 
-logo.alt = 'Beautiful minimalist logo';
+// logo.alt = 'Beautiful minimalist logo';
 
-// Non-standard
-console.log(logo.designer); // undefined
-console.log(logo.getAttribute('designer'));
-logo.setAttribute('company', 'Bankist');
+// // Non-standard
+// console.log(logo.designer); // undefined
+// console.log(logo.getAttribute('designer'));
+// logo.setAttribute('company', 'Bankist');
 
-console.log(logo.src); // absolute url
-console.log(logo.getAttribute('src')); // relative url
+// console.log(logo.src); // absolute url
+// console.log(logo.getAttribute('src')); // relative url
 
-const link = document.querySelector('.nav__link--btn');
-console.log(link.href);
-console.log(link.getAttribute('href'));
+// const link = document.querySelector('.nav__link--btn');
+// console.log(link.href);
+// console.log(link.getAttribute('href'));
 
-// Data attributes
-console.log(logo.dataset.versionNumber);
+// // Data attributes
+// console.log(logo.dataset.versionNumber);
 
-// Classes
-logo.classList.add('c', 'j')
-logo.classList.remove('c')
-logo.classList.toggle('c')
-logo.classList.contains('c'); // not includes like in arrays
+// // Classes
+// logo.classList.add('c', 'j')
+// logo.classList.remove('c')
+// logo.classList.toggle('c')
+// logo.classList.contains('c'); // not includes like in arrays
 
-// Don't use = overwrites ALL existing classes
-logo.className = 'jonas'
+// // Don't use = overwrites ALL existing classes
+// logo.className = 'jonas'
+
+// 200 :: Implementing Smooth Scrolling
+const btnScrollTo = document.querySelector('.btn--scroll-to');
+const section1 = document.querySelector('#section--1');
+
+
+btnScrollTo.addEventListener('click', function(e){
+  const s1coords = section1.getBoundingClientRect();
+  console.log(s1coords);
+
+  console.log(e.target.getBoundingClientRect());
+
+  console.log('Current scrolll (X/Y)', window.scrollX, scrollY);
+  
+  console.log('height/width viewport', document.documentElement.clientHeight, document.documentElement.clientWidth);
+
+  // Scrolling
+// window.scrollTo(s1coords.left + window.scrollX, s1coords.top + window.scrollY);
+
+// Smooth scrolling
+// old school - manually calculating values
+// window.scrollTo({
+//   left: s1coords.left + window.scrollX,
+//   top: s1coords.top + window.scrollY,
+//   behavior: 'smooth'
+// })
+
+// modern way = only works in modern browsers
+  section1.scrollIntoView({behavior: 'smooth'});
+
+});
