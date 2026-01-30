@@ -114,32 +114,53 @@ document.addEventListener('keydown', function (e) {
 // logo.className = 'jonas'
 
 // 200 :: Implementing Smooth Scrolling
-const btnScrollTo = document.querySelector('.btn--scroll-to');
-const section1 = document.querySelector('#section--1');
+// const btnScrollTo = document.querySelector('.btn--scroll-to');
+// const section1 = document.querySelector('#section--1');
 
 
-btnScrollTo.addEventListener('click', function(e){
-  const s1coords = section1.getBoundingClientRect();
-  console.log(s1coords);
+// btnScrollTo.addEventListener('click', function(e){
+//   const s1coords = section1.getBoundingClientRect();
+//   console.log(s1coords);
 
-  console.log(e.target.getBoundingClientRect());
+//   console.log(e.target.getBoundingClientRect());
 
-  console.log('Current scrolll (X/Y)', window.scrollX, scrollY);
+//   console.log('Current scrolll (X/Y)', window.scrollX, scrollY);
   
-  console.log('height/width viewport', document.documentElement.clientHeight, document.documentElement.clientWidth);
+//   console.log('height/width viewport', document.documentElement.clientHeight, document.documentElement.clientWidth);
 
-  // Scrolling
-// window.scrollTo(s1coords.left + window.scrollX, s1coords.top + window.scrollY);
+//   // Scrolling
+// // window.scrollTo(s1coords.left + window.scrollX, s1coords.top + window.scrollY);
 
-// Smooth scrolling
-// old school - manually calculating values
-// window.scrollTo({
-//   left: s1coords.left + window.scrollX,
-//   top: s1coords.top + window.scrollY,
-//   behavior: 'smooth'
-// })
+// // Smooth scrolling
+// // old school - manually calculating values
+// // window.scrollTo({
+// //   left: s1coords.left + window.scrollX,
+// //   top: s1coords.top + window.scrollY,
+// //   behavior: 'smooth'
+// // })
 
-// modern way = only works in modern browsers
-  section1.scrollIntoView({behavior: 'smooth'});
+// // modern way = only works in modern browsers
+//   section1.scrollIntoView({behavior: 'smooth'});
 
-});
+// });
+
+// 201 :: Types of Events and Event Handlers
+
+const h1 = document.querySelector('h1');
+
+const alertH1 = function(e){
+  alert('addEventlister: Great! you are reading the heading :D');
+
+  // h1.removeEventListener('mouseenter', alertH1);
+ }
+
+// fires when mouse enters 
+h1.addEventListener('mouseenter', alertH1);
+
+setTimeout(()=> h1.removeEventListener('mouseenter', alertH1), 3000);
+
+// old school - function overrides another one if another one used after it
+// h1.onmouseenter = function(e){
+//   alert('onmouseenter: Great! another mouse enter')
+// }
+
