@@ -146,21 +146,45 @@ document.addEventListener('keydown', function (e) {
 
 // 201 :: Types of Events and Event Handlers
 
-const h1 = document.querySelector('h1');
+// const h1 = document.querySelector('h1');
 
-const alertH1 = function(e){
-  alert('addEventlister: Great! you are reading the heading :D');
+// const alertH1 = function(e){
+//   alert('addEventlister: Great! you are reading the heading :D');
 
-  // h1.removeEventListener('mouseenter', alertH1);
- }
+//   // h1.removeEventListener('mouseenter', alertH1);
+//  }
 
-// fires when mouse enters 
-h1.addEventListener('mouseenter', alertH1);
+// // fires when mouse enters 
+// h1.addEventListener('mouseenter', alertH1);
 
-setTimeout(()=> h1.removeEventListener('mouseenter', alertH1), 3000);
+// setTimeout(()=> h1.removeEventListener('mouseenter', alertH1), 3000);
 
 // old school - function overrides another one if another one used after it
 // h1.onmouseenter = function(e){
 //   alert('onmouseenter: Great! another mouse enter')
 // }
 
+// 203 :: Event Propagation in Practice
+// rgb(255,255,255)
+
+const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
+
+const randomColor = () => `rgb(${randomInt(0,255)}, ${randomInt(0,255)}, ${randomInt(0,255)})`;
+
+console.log(randomColor());
+
+document.querySelector('.nav__link').addEventListener('click', function(e){
+  this.style.backgroundColor = randomColor();
+  console.log('LINK', e.target, e.currentTarget);
+  console.log(e.currentTarget === this);
+})
+
+document.querySelector('.nav__links').addEventListener('click', function(e){
+  this.style.backgroundColor = randomColor();
+  console.log('CONTAINER', e.target, e.currentTarget);
+})
+
+document.querySelector('.nav').addEventListener('click', function(e){
+  this.style.backgroundColor = randomColor();
+  console.log('NAV', e.target, e.currentTarget);
+})
