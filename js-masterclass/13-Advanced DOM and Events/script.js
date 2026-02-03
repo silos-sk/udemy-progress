@@ -94,7 +94,30 @@ document.querySelector('.nav__links').addEventListener('click', function(e){
   }
 })
 
+// 206 :: TABBED COMPONENT
+const tabs = document.querySelectorAll('.operations__tab');
+const tabsContainer = document.querySelector('.operations__tab-container');
+const tabsContent = document.querySelectorAll('.operations__content');
 
+// tabs.forEach(t => t.addEventListener('click', ()=> console.log('TAB'))) // will cause performance issues if you have many tabs
+
+// using event delegation
+tabsContainer.addEventListener('click', function(e){
+  const clicked = e.target.closest('.operations__tab');
+  console.log(clicked);
+
+  // guard clause
+  if(!clicked) return; // when nothing clicked (null), finish function and not implement further code - cleaner choice
+
+  // Active tab
+  tabs.forEach(t => t.classList.remove('operations__tab--active')); // remove active class from all tabs
+  tabsContent.forEach(c => c.classList.remove('operations__content--active')) // remove active class for content area
+  clicked.classList.add('operations__tab--active'); // add it only to active tab
+
+  // Activate content area
+  document.querySelector(`.operations__content--${clicked.dataset.tab}`)
+  .classList.add('operations__content--active');
+})
 
 
 /// LECTURES
@@ -226,32 +249,32 @@ document.querySelector('.nav__links').addEventListener('click', function(e){
 
 // 205 :: DOM Traversing
 
-const h1 = document.querySelector('h1');
+// const h1 = document.querySelector('h1');
 
-// Going downwards: child
-console.log(h1.querySelectorAll('.highlight'));
-console.log(h1.childNodes); // all direct child nodes
-console.log(h1.children); // direct children
-h1.firstElementChild.style.color = 'white';
-h1.lastElementChild.style.color = 'orangered';
+// // Going downwards: child
+// console.log(h1.querySelectorAll('.highlight'));
+// console.log(h1.childNodes); // all direct child nodes
+// console.log(h1.children); // direct children
+// h1.firstElementChild.style.color = 'white';
+// h1.lastElementChild.style.color = 'orangered';
 
 
-// Going upwards: parents
-console.log(h1.parentNode);
-console.log(h1.parentElement);
+// // Going upwards: parents
+// console.log(h1.parentNode);
+// console.log(h1.parentElement);
 
-h1.closest('.header').style.background = "var(--gradient-secondary)"; // opposite of queryselector - finds parents no matter how far up DOM tree
-h1.closest('h1').style.background = "var(--gradient-primary)";
+// h1.closest('.header').style.background = "var(--gradient-secondary)"; // opposite of queryselector - finds parents no matter how far up DOM tree
+// h1.closest('h1').style.background = "var(--gradient-primary)";
 
-// Going sideways: siblings
-console.log(h1.previousElementSibling);
-console.log(h1.nextElementSibling);
+// // Going sideways: siblings
+// console.log(h1.previousElementSibling);
+// console.log(h1.nextElementSibling);
 
-// sibling nodes:
-console.log(h1.previousSibling);
-console.log(h1.nextSibling);
+// // sibling nodes:
+// console.log(h1.previousSibling);
+// console.log(h1.nextSibling);
 
-console.log(h1.parentElement.children);
-[...h1.parentElement.children].forEach(function (el){
-  if(el !== h1) el.style.transform = 'scale(0.5)';
-});
+// console.log(h1.parentElement.children);
+// [...h1.parentElement.children].forEach(function (el){
+//   if(el !== h1) el.style.transform = 'scale(0.5)';
+// });
