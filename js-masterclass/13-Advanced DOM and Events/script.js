@@ -6,6 +6,10 @@ const btnCloseModal = document.querySelector('.btn--close-modal');
 const btnsOpenModal = document.querySelectorAll('.btn--show-modal');
 const btnScrollTo = document.querySelector('.btn--scroll-to');
 const section1 = document.querySelector('#section--1');
+const tabs = document.querySelectorAll('.operations__tab');
+const tabsContainer = document.querySelector('.operations__tab-container');
+const tabsContent = document.querySelectorAll('.operations__content');
+const nav = document.querySelector('.nav');
 
 ///////////////////////////////////////
 // Modal window
@@ -95,9 +99,6 @@ document.querySelector('.nav__links').addEventListener('click', function(e){
 })
 
 // 206 :: TABBED COMPONENT
-const tabs = document.querySelectorAll('.operations__tab');
-const tabsContainer = document.querySelector('.operations__tab-container');
-const tabsContent = document.querySelectorAll('.operations__content');
 
 // tabs.forEach(t => t.addEventListener('click', ()=> console.log('TAB'))) // will cause performance issues if you have many tabs
 
@@ -119,6 +120,28 @@ tabsContainer.addEventListener('click', function(e){
   .classList.add('operations__content--active');
 })
 
+// Menu fade animation; handler function can only handle one 'e' argument.
+const handleHover = function(e){
+  if(e.target.classList.contains('nav__link')){
+    const link = e.target;
+    const siblings = link.closest('.nav').querySelectorAll('.nav__link');
+    const logo = link.closest('.nav').querySelector('img');
+
+    siblings.forEach(el => {
+      if (el !== link) el.style.opacity = this;
+    });
+    logo.style.opacity = this;
+  }
+}
+
+// nav.addEventListener('mouseover', function(e) {
+//   handleHover(e, 0.5);
+// });
+
+// Passing an 'argument' into handler
+nav.addEventListener('mouseover', handleHover.bind(0.5));
+
+nav.addEventListener('mouseout', handleHover.bind(1));
 
 /// LECTURES
 
